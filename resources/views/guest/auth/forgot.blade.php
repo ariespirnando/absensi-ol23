@@ -3,6 +3,7 @@
 <div class="card fat">
     <div class="card-body">
         <h4 class="card-title">Forgot Password</h4>
+        @include('component.alert')
         <form action="{{ route('forgot.action')}} " method="POST" class="my-login-validation" novalidate="">
             @csrf
             <div class="form-group">
@@ -12,7 +13,7 @@
                     Email is invalid
                 </div>
                 <div class="form-text text-muted">
-                    By clicking "Reset Password" we will send a password reset link
+                    By clicking "Reset Password" we will send a new password
                 </div>
             </div>
 

@@ -4,10 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class TahunAjaranController extends Controller
+class PelajaranController extends Controller
 {
     function index(){
-        return view('dashboard.kelas.ta.ta');
+        return view('dashboard.kelas.pelajaran.pelajaran');
     }
     function save(Request $request){
 

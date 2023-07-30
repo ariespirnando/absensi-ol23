@@ -21,6 +21,7 @@
     <!-- Custom styles for this template-->
     <link href="{{asset('template/dashboard/css/sb-admin-2.min.css')}} " rel="stylesheet">
 
+    @yield('contents_style')
 </head>
 
 <body id="page-top">
@@ -44,7 +45,9 @@
                 <!-- End of Topbar -->
 
                 <!-- Begin Page Content -->
+                <div class="container-fluid">
                 @yield('contents')
+                </div>
                 <!-- /.container-fluid -->
 
             </div>
@@ -98,12 +101,7 @@
     <!-- Custom scripts for all pages-->
     <script src="{{asset('template/dashboard/js/sb-admin-2.min.js')}}"></script>
 
-    <!-- Page level plugins -->
-    <script src="{{asset('template/dashboard/vendor/chart.js/Chart.min.js')}}"></script>
-
-    <!-- Page level custom scripts -->
-    <script src="{{asset('template/dashboard/js/demo/chart-area-demo.js')}}"></script>
-    <script src="{{asset('template/dashboard/js/demo/chart-pie-demo.js')}}"></script>
+    @yield('contents_script')
 
 </body>
 
