@@ -44,6 +44,13 @@
         </div>
     </li>
 
+    <!-- Nav Item - Charts -->
+    <li class="nav-item">
+        <a class="nav-link" href="{{route('config')}}">
+            <i class="fas fas fa-fw fa-wrench"></i>
+            <span>Config</span></a>
+    </li>
+
     <!-- Divider -->
     <hr class="sidebar-divider">
 

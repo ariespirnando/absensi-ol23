@@ -37,5 +37,19 @@ class DatabaseSeeder extends Seeder
         ]]
         );
 
+        DB::table('configs')->insert([[
+        	'kode_config' => 'QR_TIMEOUT',
+            'keterangan' => '60',
+            'status' => 'A'
+        ],[
+            'name' => 'QR_LOCATION',
+            'keterangan' => '-6.37095462836588|106.71736190014911',
+            'status' => 'A'
+        ],[
+            'name' => 'QR_RADIUS',
+            'keterangan' => '300',
+            'status' => 'A'
+        ]]
+        );
     }
 }

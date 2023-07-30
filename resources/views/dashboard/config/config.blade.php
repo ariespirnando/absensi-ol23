@@ -17,11 +17,8 @@
 @section('contents')
 <!-- Page Heading -->
 <div class="d-sm-flex align-items-center justify-content-between mb-4">
-    <h1 class="h3 mb-0 text-gray-800">Data Kelas / Jurusan</h1>
-    <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" data-toggle="modal" data-target="#addModalJurusan"><i
-            class="fas fa-download fa-sm text-white-50"></i> Tambah Data</a>
+    <h1 class="h3 mb-0 text-gray-800">Config</h1>
 </div>
-@include('component.alert')
 <div class="card shadow mb-4">
 
     <div class="card-body">
@@ -36,26 +33,28 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach ($jurusans as $j )
                     <tr>
-                        <td>{{ $j->kode_jurusan}}</td>
-                        <td>{{ $j->keterangan}}</td>
-                        <td>
-                            @if ($j->status == 'A')
-                                Active
-                            @else
-                                Non Active
-                            @endif
-                        </td>
+                        <td>Tiger Nixon</td>
+                        <td>System Architect</td>
+                        <td>Edinburgh</td>
                         <td>61</td>
                     </tr>
-                    @endforeach
-
+                    <tr>
+                        <td>Garrett Winters</td>
+                        <td>Accountant</td>
+                        <td>Tokyo</td>
+                        <td>63</td>
+                    </tr>
+                    <tr>
+                        <td>Ashton Cox</td>
+                        <td>Junior Technical Author</td>
+                        <td>San Francisco</td>
+                        <td>66</td>
+                    </tr>
                 </tbody>
             </table>
         </div>
     </div>
 </div>
 
-@include('dashboard.kelas.jurusan.addModalJurusan')
 @endsection

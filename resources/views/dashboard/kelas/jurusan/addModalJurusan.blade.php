@@ -9,14 +9,38 @@ aria-hidden="true">
                 <span aria-hidden="true">×</span>
             </button>
         </div>
-        <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+        <form method="POST" action="{{route('jurusan.save.action')}}">
+        @csrf
+        <div class="modal-body">
+            <div class="form-group row">
+                <label for="staticEmail" class="col-sm-2 col-form-label">Kode Jurusan</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" name="kodeJurusan" placeholder="Kode Jurusan">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="staticEmail" class="col-sm-2 col-form-label">Keterangan</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" name="keterangan" placeholder="Keterangan">
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label for="staticEmail" class="col-sm-2 col-form-label">Status</label>
+                <div class="col-sm-6">
+                    <select class="form-control" id="exampleFormControlSelect1" name="status">
+                        <option value="A">Active</option>
+                        <option value="N">Non Active</option>
+                    </select>
+                </div>
+            </div>
+
+        </div>
         <div class="modal-footer">
             <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-            <form method="POST" action="{{route('logout.action')}}">
-                @csrf
-                <button type="submit"class="btn btn-primary" href="login.html">Logout</button>
-            </form>
+            <button type="submit"class="btn btn-primary">Simpan</button>
         </div>
+        </form>
     </div>
 </div>
 </div>

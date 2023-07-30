@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\KelasController;
 use App\Http\Controllers\AbsensController;
+use App\Http\Controllers\ConfigController;
 use App\Http\Controllers\JurusanController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\PelajaranController;
@@ -59,6 +60,11 @@ Route::middleware(['auth'])->group(function () {
         Route::post('/pelajaran/save', 'save')->name('pelajaran.save.action');
         Route::post('/pelajaran/update', 'update')->name('pelajaran.update.action');
         Route::post('/pelajaran/delete', 'delete')->name('pelajaran.delete.action');
+    });
+
+    Route::controller(ConfigController::class)->group(function () {
+        Route::get('/config', 'index')->name('config');
+        Route::post('/config/update', 'update')->name('config.update.action');
     });
 });
 
