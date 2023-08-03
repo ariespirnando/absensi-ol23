@@ -18,7 +18,7 @@
 <!-- Page Heading -->
 <div class="d-sm-flex align-items-center justify-content-between mb-4">
     <h1 class="h3 mb-0 text-gray-800">Data Kelas / Jurusan</h1>
-    <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" data-toggle="modal" data-target="#addModalJurusan"><i
+    <a href="{{route('add.jurusans')}}" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
             class="fas fa-download fa-sm text-white-50"></i> Tambah Data</a>
 </div>
 @include('component.alert')
@@ -56,6 +56,4 @@
         </div>
     </div>
 </div>
-
-@include('dashboard.kelas.jurusan.addModalJurusan')
 @endsection

@@ -18,7 +18,7 @@
 <!-- Page Heading -->
 <div class="d-sm-flex align-items-center justify-content-between mb-4">
     <h1 class="h3 mb-0 text-gray-800">Data Kelas / Pelajaran</h1>
-    <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" data-toggle="modal" data-target="#addModalPelajaran"><i
+    <a href="{{route('add.pelajaran')}}" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
         class="fas fa-download fa-sm text-white-50"></i> Tambah Data</a>
 </div>
 <div class="card shadow mb-4">
@@ -35,28 +35,24 @@
                     </tr>
                 </thead>
                 <tbody>
+                    @foreach ($pelajarans as $p )
                     <tr>
-                        <td>Tiger Nixon</td>
-                        <td>System Architect</td>
-                        <td>Edinburgh</td>
+                        <td>{{ $p->kode_pelajaran}}</td>
+                        <td>{{ $p->keterangan}}</td>
+                        <td></td>
+                        <td>
+                            @if ($p->status == 'A')
+                                Active
+                            @else
+                                Non Active
+                            @endif
+                        </td>
                         <td>61</td>
                     </tr>
-                    <tr>
-                        <td>Garrett Winters</td>
-                        <td>Accountant</td>
-                        <td>Tokyo</td>
-                        <td>63</td>
-                    </tr>
-                    <tr>
-                        <td>Ashton Cox</td>
-                        <td>Junior Technical Author</td>
-                        <td>San Francisco</td>
-                        <td>66</td>
-                    </tr>
+                    @endforeach
                 </tbody>
             </table>
         </div>
     </div>
 </div>
-@include('dashboard.kelas.pelajaran.addModalPelajaran')
 @endsection

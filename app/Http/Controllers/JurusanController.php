@@ -11,17 +11,21 @@ class JurusanController extends Controller
         $data['jurusans'] = Jurusan::all();
         return view('dashboard.kelas.jurusan.jurusan',$data);
     }
+    function add_form(){
+        return view('dashboard.kelas.jurusan.addjurusan');
+    }
+
     function save(Request $request){
         $request->validate([
-            'kodeJurusan' => 'required',
+            'kode' => 'required',
             'keterangan' => 'required'
         ],[
-            'kodeJurusan.required' => 'Kode Jurusan wajib diisi',
+            'kode.required' => 'Kode Jurusan wajib diisi',
             'keterangan.required' => 'Keterangan wajib diisi'
         ]);
 
         $data = [
-            'kode_jurusan'=>$request->kodeJurusan,
+            'kode_jurusan'=>$request->kode,
             'keterangan'=>$request->keterangan,
             'status'=>$request->status
         ];

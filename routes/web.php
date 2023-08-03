@@ -36,6 +36,8 @@ Route::middleware(['auth'])->group(function () {
 
     Route::controller(KelasController::class)->group(function () {
         Route::get('/kelas', 'index')->name('kelas');
+        Route::get('/kelas/add','add_form')->name('add.kelas');
+
         Route::post('/kelas/save', 'save')->name('kelas.save.action');
         Route::post('/kelas/update', 'update')->name('kelas.update.action');
         Route::post('/kelas/delete', 'delete')->name('kelas.delete.action');
@@ -43,6 +45,8 @@ Route::middleware(['auth'])->group(function () {
 
     Route::controller(TahunAjaranController::class)->group(function () {
         Route::get('/tahunAjaran', 'index')->name('tahun.ajaran');
+        Route::get('/tahunAjaran/add','add_form')->name('add.ta');
+
         Route::post('/tahunAjaran/save', 'save')->name('tahun.ajaran.save.action');
         Route::post('/tahunAjaran/update', 'update')->name('tahun.ajaran.update.action');
         Route::post('/tahunAjaran/delete', 'delete')->name('tahun.ajaran.delete.action');
@@ -50,6 +54,8 @@ Route::middleware(['auth'])->group(function () {
 
     Route::controller(JurusanController::class)->group(function () {
         Route::get('/jurusan', 'index')->name('jurusan');
+        Route::get('/jurusan/add','add_form')->name('add.jurusans');
+
         Route::post('/jurusan/save', 'save')->name('jurusan.save.action');
         Route::post('/jurusan/update', 'update')->name('jurusan.update.action');
         Route::post('/jurusan/delete', 'delete')->name('jurusan.delete.action');
@@ -57,6 +63,8 @@ Route::middleware(['auth'])->group(function () {
 
     Route::controller(PelajaranController::class)->group(function () {
         Route::get('/pelajaran', 'index')->name('pelajaran');
+        Route::get('/pelajaran/add','add_form')->name('add.pelajaran');
+
         Route::post('/pelajaran/save', 'save')->name('pelajaran.save.action');
         Route::post('/pelajaran/update', 'update')->name('pelajaran.update.action');
         Route::post('/pelajaran/delete', 'delete')->name('pelajaran.delete.action');

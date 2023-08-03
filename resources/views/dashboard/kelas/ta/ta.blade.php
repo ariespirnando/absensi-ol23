@@ -18,7 +18,7 @@
 <!-- Page Heading -->
 <div class="d-sm-flex align-items-center justify-content-between mb-4">
     <h1 class="h3 mb-0 text-gray-800">Data Kelas / Tahun Ajaran</h1>
-    <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" data-toggle="modal" data-target="#addModalTa"><i
+    <a href="{{route('add.ta')}}" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
         class="fas fa-download fa-sm text-white-50"></i> Tambah Data</a>
 </div>
 <div class="card shadow mb-4">
@@ -35,28 +35,24 @@
                     </tr>
                 </thead>
                 <tbody>
+                    @foreach ($tahunajarans as $t )
                     <tr>
-                        <td>Tiger Nixon</td>
-                        <td>System Architect</td>
-                        <td>Edinburgh</td>
+                        <td>{{ $t->kode_tahun_ajaran}}</td>
+                        <td>{{ $t->keterangan}}</td>
+                        <td></td>
+                        <td>
+                            @if ($t->status == 'A')
+                                Active
+                            @else
+                                Non Active
+                            @endif
+                        </td>
                         <td>61</td>
                     </tr>
-                    <tr>
-                        <td>Garrett Winters</td>
-                        <td>Accountant</td>
-                        <td>Tokyo</td>
-                        <td>63</td>
-                    </tr>
-                    <tr>
-                        <td>Ashton Cox</td>
-                        <td>Junior Technical Author</td>
-                        <td>San Francisco</td>
-                        <td>66</td>
-                    </tr>
+                    @endforeach
                 </tbody>
             </table>
         </div>
     </div>
 </div>
-@include('dashboard.kelas.ta.addModalTa')
 @endsection
