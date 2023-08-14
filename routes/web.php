@@ -37,42 +37,56 @@ Route::middleware(['auth'])->group(function () {
     Route::controller(KelasController::class)->group(function () {
         Route::get('/kelas', 'index')->name('kelas');
         Route::get('/kelas/add','add_form')->name('add.kelas');
+        Route::get('/kelas/edit/{id}','add_form')->name('edit.kelas');
+        Route::get('/kelas/delete/{id}', 'delete')->name('kelas.delete.action');
 
         Route::post('/kelas/save', 'save')->name('kelas.save.action');
         Route::post('/kelas/update', 'update')->name('kelas.update.action');
-        Route::post('/kelas/delete', 'delete')->name('kelas.delete.action');
     });
 
     Route::controller(TahunAjaranController::class)->group(function () {
         Route::get('/tahunAjaran', 'index')->name('tahun.ajaran');
         Route::get('/tahunAjaran/add','add_form')->name('add.ta');
+        Route::get('/tahunAjaran/edit/{id}','add_form')->name('edit.ta');
+        Route::get('/tahunAjaran/delete/{id}', 'delete')->name('tahun.ajaran.delete.action');
 
         Route::post('/tahunAjaran/save', 'save')->name('tahun.ajaran.save.action');
         Route::post('/tahunAjaran/update', 'update')->name('tahun.ajaran.update.action');
-        Route::post('/tahunAjaran/delete', 'delete')->name('tahun.ajaran.delete.action');
     });
 
     Route::controller(JurusanController::class)->group(function () {
         Route::get('/jurusan', 'index')->name('jurusan');
         Route::get('/jurusan/add','add_form')->name('add.jurusans');
+        Route::get('/jurusan/edit/{id}','add_form')->name('edit.jurusans');
+        Route::get('/jurusan/delete/{id}', 'delete')->name('jurusan.delete.action');
 
         Route::post('/jurusan/save', 'save')->name('jurusan.save.action');
         Route::post('/jurusan/update', 'update')->name('jurusan.update.action');
-        Route::post('/jurusan/delete', 'delete')->name('jurusan.delete.action');
     });
 
     Route::controller(PelajaranController::class)->group(function () {
         Route::get('/pelajaran', 'index')->name('pelajaran');
         Route::get('/pelajaran/add','add_form')->name('add.pelajaran');
+        Route::get('/pelajaran/edit/{id}','add_form')->name('edit.pelajaran');
+        Route::get('/pelajaran/delete/{id}', 'delete')->name('pelajaran.delete.action');
 
         Route::post('/pelajaran/save', 'save')->name('pelajaran.save.action');
         Route::post('/pelajaran/update', 'update')->name('pelajaran.update.action');
-        Route::post('/pelajaran/delete', 'delete')->name('pelajaran.delete.action');
     });
 
     Route::controller(ConfigController::class)->group(function () {
         Route::get('/config', 'index')->name('config');
         Route::post('/config/update', 'update')->name('config.update.action');
+    });
+
+    Route::controller(AbsensController::class)->group(function () {
+        Route::get('/absensi', 'index')->name('absensi');
+        Route::get('/absensi/add','add_form')->name('add.absensi');
+        Route::get('/absensi/edit/{id}','add_form')->name('edit.absensi');
+        Route::get('/absensi/delete/{id}', 'delete')->name('absensi.delete.action');
+
+        Route::post('/absensi/save', 'save')->name('absensi.save.action');
+        Route::post('/absensi/update', 'update')->name('absensi.update.action');
     });
 });
 

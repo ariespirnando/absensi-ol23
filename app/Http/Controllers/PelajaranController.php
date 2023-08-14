@@ -38,10 +38,15 @@ class PelajaranController extends Controller
             return redirect()->route('pelajaran')->withErrors('Pelajaran gagal ditambahkan |'+$e->getMessage());
         }
     }
-    function update(Request $request){
-
+    function delete($id){
+        try {
+            Pelajaran::find($id)->delete();
+            return redirect()->route('pelajaran')->with('success','pelajaran berhasil dihapus');
+        } catch (Exception $e) {
+            return redirect()->route('pelajaran')->withErrors('pelajaran gagal dihapus |'+$e->getMessage());
+        }
     }
-    function delete(Request $request){
+    function update(Request $request){
 
     }
 }

@@ -38,10 +38,15 @@ class KelasController extends Controller
             return redirect()->route('kelas')->withErrors('Kelas gagal ditambahkan |'+$e->getMessage());
         }
     }
-    function update(Request $request){
-
+    function delete($id){
+        try {
+            Kelas::find($id)->delete();
+            return redirect()->route('kelas')->with('success','Kelas berhasil dihapus');
+        } catch (Exception $e) {
+            return redirect()->route('kelas')->withErrors('Kelas gagal dihapus |'+$e->getMessage());
+        }
     }
-    function delete(Request $request){
+    function update(Request $request){
 
     }
 }

@@ -47,7 +47,10 @@
                                 Non Active
                             @endif
                         </td>
-                        <td>61</td>
+                        <td>
+                            <a href="{{ route('edit.ta',$j->id) }}">Edit</a> ||
+                            <a href="{{ route('tahun.ajaran.delete.action', $j->id) }}">Delete</a>
+                        </td>
                     </tr>
                     @endforeach
                 </tbody>

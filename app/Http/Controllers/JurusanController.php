@@ -14,6 +14,18 @@ class JurusanController extends Controller
     function add_form(){
         return view('dashboard.kelas.jurusan.addjurusan');
     }
+    function edit_form($id){
+        $data['jurusan'] = Jurusan::find($id);
+        return view('dashboard.kelas.jurusan.addjurusan');
+    }
+    function delete($id){
+        try {
+            Jurusan::find($id)->delete();
+            return redirect()->route('jurusan')->with('success','Jurusan berhasil dihapus');
+        } catch (Exception $e) {
+            return redirect()->route('jurusan')->withErrors('Jurusan gagal dihapus |'+$e->getMessage());
+        }
+    }
 
     function save(Request $request){
         $request->validate([
@@ -42,7 +54,5 @@ class JurusanController extends Controller
     function update(Request $request){
 
     }
-    function delete(Request $request){
 
-    }
 }

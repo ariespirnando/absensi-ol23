@@ -48,7 +48,10 @@
                                 Non Active
                             @endif
                         </td>
-                        <td>61</td>
+                        <td>
+                            <a href="{{ route('edit.kelas',$j->id) }}">Edit</a> ||
+                            <a href="{{ route('kelas.delete.action', $j->id) }}">Delete</a>
+                        </td>
                     </tr>
                     @endforeach
                 </tbody>

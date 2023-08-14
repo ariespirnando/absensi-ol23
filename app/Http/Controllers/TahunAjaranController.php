@@ -37,10 +37,15 @@ class TahunAjaranController extends Controller
             return redirect()->route('tahun.ajaran')->withErrors('Tahun Ajaran gagal ditambahkan |'+$e->getMessage());
         }
     }
-    function update(Request $request){
-
+    function delete($id){
+        try {
+            TahunAjaran::find($id)->delete();
+            return redirect()->route('tahun.ajaran')->with('success','Tahun Ajaran berhasil dihapus');
+        } catch (Exception $e) {
+            return redirect()->route('tahun.ajaran')->withErrors('Tahun Ajaran gagal dihapus |'+$e->getMessage());
+        }
     }
-    function delete(Request $request){
+    function update(Request $request){
 
     }
 }
